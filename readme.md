@@ -1,6 +1,8 @@
 # jsrepl
 
-> A Quick and Minimal JS REPL
+![](/docs/screenshot.png)
+
+<p align="center">A Quick and Minimal JS REPL</p>
 
 > [!NOTE]\
 > If you find this or any other tool / app by [reaper.is](https://reaper.is)
