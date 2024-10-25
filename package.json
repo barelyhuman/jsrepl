@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "nprogress": "^0.2.0",
     "preact": "^10.24.3"
   },
   "devDependencies": {

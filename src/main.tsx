@@ -1,13 +1,18 @@
 import { render } from "preact";
 import { useRef, useState } from "preact/hooks";
+import NProgress from "nprogress";
 
 const App = () => {
   const tarea = useRef<AceAjax.Editor>();
   const [output, setOutput] = useState("");
   const [errors, setErrors] = useState([]);
+  const [executing, setExecuting] = useState(false);
+
   const onExec = async () => {
     setErrors([]);
     setOutput("");
+    setExecuting(true);
+    NProgress.start();
     try {
       tarea.current?.setReadOnly(true);
       const response = await fetch("/execute", {
@@ -30,6 +35,8 @@ const App = () => {
       tarea.current?.clearSelection();
     } finally {
       tarea.current?.setReadOnly(false);
+      setExecuting(false);
+      NProgress.done();
     }
   };
 
@@ -40,7 +47,7 @@ const App = () => {
           <div class="p-4">
             <pre
               id="editor"
-              class="min-h-[300px] h-full"
+              class="h-full min-h-[300px] h-full"
               ref={(editorEl) => {
                 if (!editorEl) return;
                 const editor = ace.edit(editorEl);
@@ -49,6 +56,18 @@ const App = () => {
                   fontFamily: "IBM Plex Mono",
                   fontSize: "13.5pt",
                 });
+
+                editor.commands.addCommand({
+                  name: "exec",
+                  bindKey: {
+                    win: "Ctrl-Enter",
+                    mac: "Command-Enter",
+                  },
+                  exec: function (editor) {
+                    onExec();
+                  },
+                });
+
                 editor.renderer.setShowGutter(false);
                 tarea.current = editor;
                 editor.setTheme(`ace/theme/xcode`);
@@ -58,7 +77,12 @@ const App = () => {
             ></pre>
           </div>
           <div class="flex justify-end">
-            <button class="btn" onClick={onExec}>
+            <button
+              title="Run Code (Ctrl/Cmd+Enter)"
+              class="btn"
+              onClick={onExec}
+              disabled={executing}
+            >
               Run &rarr;
             </button>
           </div>

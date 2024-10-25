@@ -15,6 +15,7 @@
     "npm:ace@*": "1.3.0",
     "npm:esbuild@*": "0.24.0",
     "npm:lodash@*": "4.17.21",
+    "npm:nprogress@0.2": "0.2.0",
     "npm:preact@^10.24.3": "10.24.3",
     "npm:prettier@*": "3.3.3"
   },
@@ -569,6 +570,9 @@
         "semver"
       ]
     },
+    "nprogress@0.2.0": {
+      "integrity": "sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA=="
+    },
     "object-assign@4.1.1": {
       "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="
     },
@@ -838,6 +842,7 @@
     "packageJson": {
       "dependencies": [
         "npm:@types/ace@0.0.52",
+        "npm:nprogress@0.2",
         "npm:preact@^10.24.3"
       ]
     }
