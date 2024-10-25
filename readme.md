@@ -14,7 +14,7 @@
   - [Why?](#why)
   - [Highlights](#highlights)
   - [Stack](#stack)
-  - [Usages](#usages)
+  - [Usage](#usage)
     - [Hosted](#hosted)
     - [Self Host](#self-host)
     - [Future](#future)
@@ -41,7 +41,7 @@ folders but I do need a decent way to install deps and so, you have this.
 - [twind](http://twind.style)
 - [Docker](docker.com)
 
-## Usages
+## Usage
 
 ### Hosted
 
