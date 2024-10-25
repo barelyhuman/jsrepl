@@ -40,10 +40,9 @@ const App = () => {
           <div class="p-4">
             <pre
               id="editor"
-              class="min-h-[200px] h-full"
+              class="min-h-[300px] h-full"
               ref={(editorEl) => {
                 if (!editorEl) return;
-                // @ts-expect-error global
                 const editor = ace.edit(editorEl);
 
                 editor.setOptions({
