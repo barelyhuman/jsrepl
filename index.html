@@ -85,13 +85,60 @@
     </style>
   </head>
   <body>
-    <header class="max-w-4xl p-2 mb-10 mx-auto">
-      <h1 class="font-semibold font-sans text-xl">JSRepl</h1>
+    <header class="p-2 mx-auto mb-10 max-w-4xl">
+      <h1 class="font-sans text-xl font-semibold">JSRepl</h1>
     </header>
     <div
       id="app"
-      class="mx-auto max-w-4xl min-h-100vh flex justify-center items-center p-2"
+      class="flex justify-center items-center p-2 mx-auto max-w-4xl min-h-100vh"
     ></div>
+    <footer class="p-2 mx-auto mt-10 max-w-4xl">
+      <h3 class="font-semibold">About</h3>
+      <article class="text-zinc-600">
+        <blockquote>A quick and minimal javascript REPL engine</blockquote>
+        <p class="text-sm">
+          Built by
+          <a
+            href="http://reaper.is"
+            class="underline text-zinc-900 underline-offset-4"
+            >reaper.is</a
+          >
+        </p>
+      </article>
+      <div class="fixed right-5 bottom-5">
+        <div
+          title="Buy me a coffee!"
+          class="inline-flex justify-center items-center rounded-full shadow-inset bg-zinc-100"
+        >
+          <a
+            class="inline-flex justify-center items-center m-2 w-10 h-10 rounded-full cursor-pointer bg-zinc-900 text-zinc-50"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://ko-fi.com/barelyreaper"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-5 h-5"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1"
+              ></path>
+              <path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path>
+              <path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path>
+              <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z"></path>
+              <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
     <script
       src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"
       type="text/javascript"
