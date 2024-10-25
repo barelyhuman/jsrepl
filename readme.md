@@ -45,7 +45,7 @@ folders but I do need a decent way to install deps and so, you have this.
 
 ### Hosted
 
-TBD
+You can use the hosted version at [jsrepl.barelyhuman.dev](https://jsrepl.barelyhuman.dev)
 
 ### Self Host
 
@@ -53,8 +53,8 @@ The recommended way to host this is by using the docker image, primarily to
 reduce the risk of exposing your system to the web.
 
 ```sh
-docker pull ghcr.io/barelyhuman/jsrepl:latest
-docker run -p 8000:8000 ghcr.io/barelyhuman/jsrepl:latest
+docker pull ghcr.io/barelyhuman/jsrepl:main
+docker run -p 8000:8000 ghcr.io/barelyhuman/jsrepl:main
 ```
 
 - Open your browser to `localhost:8000` and you are good to go!
