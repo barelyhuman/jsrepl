@@ -8,24 +8,29 @@ const App = () => {
   const onExec = async () => {
     setErrors([]);
     setOutput("");
-    const response = await fetch("/execute", {
-      method: "post",
-      body: JSON.stringify({
-        code: tarea.current?.getValue(),
-      }),
-    });
-    const outData = await response.json();
-    if (outData.hasError) {
-      setErrors(outData.errors);
-    } else {
-      setOutput(outData.output);
+    try {
+      tarea.current?.setReadOnly(true);
+      const response = await fetch("/execute", {
+        method: "post",
+        body: JSON.stringify({
+          code: tarea.current?.getValue(),
+        }),
+      });
+      const outData = await response.json();
+      if (outData.hasError) {
+        setErrors(outData.errors);
+      } else {
+        setOutput(outData.output);
+      }
+      const cur = tarea.current?.getCursorPosition();
+      tarea.current?.setValue(outData.codeFormatted);
+      if (cur) {
+        tarea.current?.moveCursorTo(cur.row, cur.column);
+      }
+      tarea.current?.clearSelection();
+    } finally {
+      tarea.current?.setReadOnly(false);
     }
-    const cur = tarea.current?.getCursorPosition();
-    tarea.current?.setValue(outData.codeFormatted);
-    if (cur) {
-      tarea.current?.moveCursorTo(cur.row, cur.column);
-    }
-    tarea.current?.clearSelection();
   };
 
   return (
