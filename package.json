@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "preact": "^10.24.3"
+  },
+  "devDependencies": {
+    "@types/ace": "0.0.52"
+  }
+}

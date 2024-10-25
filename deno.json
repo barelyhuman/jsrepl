@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "dev": "deno -A --watch='./**/*.html' main.ts ",
+    "start": "deno --allow-run --allow-read --allow-write --allow-env --allow-read --allow-sys --allow-net main.ts",
+    "twd": "deno run --allow-read=. --allow-write=. --allow-net=deno.land,esm.sh,cdn.esm.sh https://deno.land/x/twd@v0.4.8/cli.ts -w index.html -o styles.css",
+    "web:build": "deno -A build.ts",
+    "web:dev": "deno -A build.ts -w"
+  },
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "types": ["@types/ace"]
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Repl</title>
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,600"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.twind.style" crossorigin></script>
+    <script>
+      twind.install({
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: "IBM Plex Mono",
+            },
+          },
+        },
+      });
+    </script>
+    <style>
+      .btn {
+        display: inline-block;
+        outline: 0;
+        cursor: pointer;
+        border: none;
+        padding: 0 32px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 7px;
+        background-color: black;
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+        box-shadow: 0 4px 14px 0 rgb(0 0 0 / 39%);
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .btn:hover {
+        background: rgba(28, 28, 28, 0.9);
+        box-shadow: 0 6px 20px rgb(0 0 0 / 23%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="max-w-4xl p-2 mx-auto">
+      <h1 class="font-semibold font-sans text-xl">JS Repl</h1>
+    </header>
+    <div
+      id="app"
+      class="mx-auto max-w-4xl min-h-100vh flex justify-center items-center p-2"
+    ></div>
+    <script
+      src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script type="module" defer src="./assets/main.js"></script>
+  </body>
+</html>
